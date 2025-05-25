@@ -58,7 +58,6 @@ export default function PaletteTable({
                 <div className="font-mono mt-1">{hex}</div>
                 <div
                   className="font-mono text-xs text-secondary mt-1"
-                  style={{ whiteSpace: 'nowrap' }}
                 >
                   {oldRgb}
                 </div>
@@ -78,7 +77,6 @@ export default function PaletteTable({
                 <div className="font-mono mt-1">{litHex}</div>
                 <div
                   className="font-mono text-xs text-secondary mt-1"
-                  style={{ whiteSpace: 'nowrap' }}
                 >
                   {newRgb}
                 </div>

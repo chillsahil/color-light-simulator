@@ -1,7 +1,5 @@
 /* src/styles.css */
-html {
-  font-size: 110%;
-}
+
 @-ms-viewport { width: 900px; }
 @viewport { width: 900px; }
 @font-face {
@@ -378,4 +376,11 @@ input[type="range"] {
 
 .tint-row label {
   white-space: nowrap;
+}
+
+.table-retro td .font-mono {
+  /* allow wrapping */
+  white-space: normal;
+  /* break long words (e.g. “(255, 159, 32)255, 147, 85)” ) */
+  overflow-wrap: break-word;
 }
