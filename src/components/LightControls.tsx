@@ -158,10 +158,11 @@ export default function LightControls({
           min={0}
           max={1}
           step={0.01}
-          value={roughness}
-          onChange={e => onRoughnessChange(parseFloat(e.target.value))}
+          value={1 - roughness}
+          onChange={e => onRoughnessChange(1 - parseFloat(e.target.value))}
           className="w-full"
         />
+
       </div>
     </div>
   )
