@@ -7,9 +7,9 @@ import PaletteTable from './components/PaletteTable'
 export default function App() {
   const [palette, setPalette] = useState<string[]>([
     '#309898',
-    '#FF9F00',
-    '#F4631E',
-    '#CB0404',
+    '#ff9f00',
+    '#f4631e',
+    '#cb0404',
   ])
   const [lightLab, setLightLab] = useState<[number, number, number]>([
     100, 0, 0,
