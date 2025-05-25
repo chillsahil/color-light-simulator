@@ -1,5 +1,5 @@
 // src/components/PaletteTable.tsx
-import React from 'react'
+import React, { useState } from 'react'
 import { hexToRgb } from '../utils/color'
 import { applyLightWithRoughness } from '../utils/lighting'
 
@@ -16,6 +16,25 @@ export default function PaletteTable({
   intensity,
   roughness,
 }: PaletteTableProps) {
+  const [copiedMap, setCopiedMap] = useState<Record<string, boolean>>({})
+
+  // helper that returns an array of React nodes with <wbr/> after each comma
+  const withCommaBreaks = (s: string) =>
+    s.split(',').flatMap((piece, i, arr) => {
+      const text = piece + (i < arr.length - 1 ? ',' : '')
+      return i < arr.length - 1
+        ? [text, <wbr key={i} />]
+        : [text]
+    })
+
+  const handleCopy = (value: string, id: string) => {
+    navigator.clipboard.writeText(value)
+    setCopiedMap(prev => ({ ...prev, [id]: true }))
+    setTimeout(() => {
+      setCopiedMap(prev => ({ ...prev, [id]: false }))
+    }, 2000)
+  }
+
   if (palette.length === 0) {
     return <p className="text-accent">No colors in palette.</p>
   }
@@ -39,8 +58,11 @@ export default function PaletteTable({
           )
           const [lr, lg, lb] = hexToRgb(litHex)
 
-          const oldRgb = `(${r},\u00A0${g},\u00A0${b})`
-          const newRgb = `(${lr},\u00A0${lg},\u00A0${lb})`
+          const oldRgb = `(${r}, ${g}, ${b})`
+          const newRgb = `(${lr}, ${lg}, ${lb})`
+
+          const oldId = `${i}-old`
+          const newId = `${i}-new`
 
           return (
             <tr key={i}>
@@ -51,15 +73,21 @@ export default function PaletteTable({
                     width: '48px',
                     height: '48px',
                     margin: '0 auto',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '4px',
+                    border: '2px solid var(--border-color)',
+                    borderRadius: '6px',
                   }}
                 />
-                <div className="font-mono mt-1">{hex}</div>
                 <div
-                  className="font-mono text-xs text-secondary mt-1"
+                  className="font-mono mt-1 copy-container"
+                  onClick={() => handleCopy(hex, oldId)}
                 >
-                  {oldRgb}
+                  {hex}
+                  <span className="copy-button">
+                    {copiedMap[oldId] ? 'Copied!' : 'Copy'}
+                  </span>
+                </div>
+                <div className="font-mono text-xs text-secondary mt-1">
+                  {withCommaBreaks(oldRgb)}
                 </div>
               </td>
 
@@ -70,15 +98,21 @@ export default function PaletteTable({
                     width: '48px',
                     height: '48px',
                     margin: '0 auto',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '4px',
+                    border: '2px solid var(--border-color)',
+                    borderRadius: '6px',
                   }}
                 />
-                <div className="font-mono mt-1">{litHex}</div>
                 <div
-                  className="font-mono text-xs text-secondary mt-1"
+                  className="font-mono mt-1 copy-container"
+                  onClick={() => handleCopy(litHex, newId)}
                 >
-                  {newRgb}
+                  {litHex}
+                  <span className="copy-button">
+                    {copiedMap[newId] ? 'Copied!' : 'Copy'}
+                  </span>
+                </div>
+                <div className="font-mono text-xs text-secondary mt-1">
+                  {withCommaBreaks(newRgb)}
                 </div>
               </td>
             </tr>

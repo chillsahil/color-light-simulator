@@ -24,9 +24,7 @@ export default function App() {
       </h1>
 
       <p className="instructions">
-        Add or remove colors in the Palette section, pick a light tint, and adjust
-        intensity & roughness to see how your palette transforms — both in the table
-        below and the swatch preview above.
+        Add or remove colors in the Palette section, pick a light tint and roughness preset or customize them, and see how your colors look under different lighting conditions in the Preview Table.
       </p>
 
       <div className="three-col-container">
@@ -41,9 +39,10 @@ export default function App() {
             lightLab={lightLab}
             intensity={intensity}
             roughness={roughness}
+            onRoughnessChange={setRoughness}
             onLightChange={setLightLab}
             onIntensityChange={setIntensity}
-            onRoughnessChange={setRoughness}
+            
           />
         </section>
 
@@ -65,15 +64,20 @@ export default function App() {
     Built by{' '}
     <a
       href="https://chillsahil.io"
-      className="text-link hover:underline"
+      className="text-link text-lg hover:underline"
       target="_blank"
       rel="noopener noreferrer"
     >
       chillsahil.io
     </a>
+    <div className="text-center text-sm text-accent mt-4">
+        Made with ❤️ using React and Chroma.js
+      </div>
   </div>
   <div>Dedicated to Hope</div>
 </footer>
+      
+
 
     </div>
   )

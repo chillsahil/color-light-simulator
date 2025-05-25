@@ -56,7 +56,7 @@ export default function PaletteInput({
               className="text-red-500 hover:text-red-700 px-2"
               aria-label="Remove color"
             >
-              ✕
+              del
             </button>
           )}
         </div>

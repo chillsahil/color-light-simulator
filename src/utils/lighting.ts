@@ -10,7 +10,8 @@ export function applyLightWithRoughness(
   const [L0, a0, b0] = chroma(hex).lab()
   const [Llight, alight, blight] = lightLab
 
-  const diffuseWeight = roughness
+  const diffuseWeight = 1 - roughness
+
   const Ld = L0 + (Llight - L0) * intensity * diffuseWeight
   const ad = a0 + (alight - a0) * intensity * diffuseWeight * 0.5
   const bd = b0 + (blight - b0) * intensity * diffuseWeight * 0.5
