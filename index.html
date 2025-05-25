@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Force layout viewport to 900px for retro style -->
+    <meta name="viewport" content="width=900" />
+    <title>Color & Lighting Simulator</title>
+
+    <!-- Preload retro fonts -->
+    <link
+      rel="preload"
+      href="/fonts/VCR_OSD_Mono.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/vhs-gothic.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+
+    <!-- Social meta tags (optional) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Color & Lighting Simulator" />
+    <meta
+      property="og:description"
+      content="Try out lighting & texture effects on any color palette!"
+    />
+    <meta property="og:image" content="/images/preview.png" />
+
+    <!-- Tailwind CSS will be injected by Vite -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
