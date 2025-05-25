@@ -61,16 +61,20 @@ export default function App() {
       </div>
 
       <footer className="footer">
-        Built by{' '}
-        <a
-          href="https://chillsahil.io"
-          className="text-link hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          chillsahil.io
-        </a>
-      </footer>
+  <div>
+    Built by{' '}
+    <a
+      href="https://chillsahil.io"
+      className="text-link hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      chillsahil.io
+    </a>
+  </div>
+  <div>Dedicated to Hope</div>
+</footer>
+
     </div>
   )
 }
