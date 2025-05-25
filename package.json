@@ -1,6 +1,16 @@
 {
   "name": "my-color-light-simulator",
   "version": "0.1.0",
+  "keywords": [
+    "react",
+    "color",
+    "light",
+    "chroma-js",
+    "ui",
+    "design-system",
+    "graphics"
+  ],
+  "description": "A React-based color light simulator that allows users to visualize and manipulate colors in a simulated lighting environment using chroma-js.",
   "private": true,
   "homepage": "https://chillsahil.io/color-light-simulator/",
   "scripts": {
