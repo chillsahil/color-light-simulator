@@ -1,4 +1,7 @@
 /* src/styles.css */
+html {
+  font-size: 110%;
+}
 @-ms-viewport { width: 900px; }
 @viewport { width: 900px; }
 @font-face {
