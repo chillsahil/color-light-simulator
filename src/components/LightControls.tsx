@@ -161,6 +161,7 @@ export default function LightControls({
               onChange={handleSwatchChange}
               className="tint-swatch"
             />
+
             <input
               id="light-color-hex"
               type="text"
@@ -173,7 +174,7 @@ export default function LightControls({
             />
           </div>
         </div>
-
+          <br />
         {/* Intensity Control */}
         <div>
           <label htmlFor="intensity-input" className="block mb-1 text-accent">

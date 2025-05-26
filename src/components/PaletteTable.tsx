@@ -43,8 +43,8 @@ export default function PaletteTable({
     <table className="table-retro">
       <thead>
         <tr>
-          <th>Old Color</th>
-          <th>New Color</th>
+          <th>Input Palette</th>
+          <th>Output Palette</th>
         </tr>
       </thead>
       <tbody>

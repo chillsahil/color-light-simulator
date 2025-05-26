@@ -19,12 +19,13 @@ export default function App() {
 
   return (
     <div className="py-8 px-4 bg-background text-text font-mono">
+      <br />
       <h1 className="text-4xl font-retro text-center mb-4">
         Color & Lighting Simulator
       </h1>
 
       <p className="instructions">
-        Add or remove colors in the Palette section, pick a light tint and roughness preset or customize them, and see how your colors look under different lighting conditions in the Preview Table.
+        Add or remove colors in the Palette section. Pick a light tint and roughness preset or customize them yourself, and see how your colors look under different lighting conditions in the Output Table.
       </p>
 
       <div className="three-col-container">
@@ -47,7 +48,7 @@ export default function App() {
         </section>
 
         <section className="section-card overflow-auto">
-          <h2>Preview Table</h2>
+          <h2>Output</h2>
           <div className="overflow-x-auto">
             <PaletteTable
               palette={palette}
