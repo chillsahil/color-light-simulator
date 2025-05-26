@@ -411,11 +411,7 @@ input[type="range"] {
 }
 
 
-/* If you want a slightly stronger outline when focused */
-.button-preset.active:focus {
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
-}
+
 
 .w-full {
   width: 100%;
